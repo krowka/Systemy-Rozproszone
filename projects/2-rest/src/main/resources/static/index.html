@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form action="/exchange">
+    <label for="currency">Currency:</label><br>
+    <input type="text" id="currency" name="currency"><br>
+    <label for="date">Date:</label><br>
+    <input type="text" id="date" name="date">
+    <input type="submit" value="Submit">
+</form>
+<br><br>
+<h2>What about joke?</h2>
+<form action="/joke">
+    <select name="category">
+        <option value="Miscellaneous">Miscellaneous</option>
+        <option value="Programming">Programming</option>
+        <option value="Dark">Dark</option>
+    </select>
+    <input type="submit"  value="Get joke">
+</form>
+</body>
+</html>

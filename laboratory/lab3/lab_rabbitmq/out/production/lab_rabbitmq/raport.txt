@@ -1,0 +1,56 @@
+Łukasz Krówka - 296602
+
+Zad 1a.
+
+Potwierdzenie 		      | Restart po przetworzeniu wiadomosci |  Restart w trakcie przetwarzania wiadomosci |
+Po otrzymaniu wiadomosci      | 		TAK		    | 			 TAK			  |
+Po przetworzeniu wiadomosci   | 		TAK		    | 			 NIE			  |
+
+
+Który sposób potwierdzeń zapewnia większą niezawodność?
+ - Wiekszą niezawodność zapewnia sposób potwierdzeń po otrzymaniu wiadomości.
+
+Co się stanie, jeśli nie będziemy potwierdzać wiadomości ani po otrzymaniu, ani po
+przetworzeniu?
+ - 
+
+Zad 1b.
+Przed włączeniem obsługi QoS:
+
+Consumer 1:
+	Z1 CONSUMER
+	Waiting for messages...
+	Received: 5
+	Received: 5
+	Received: 5
+	Received: 5
+	Received: 5
+
+Consumer 2:
+	Z1 CONSUMER
+	Waiting for messages...
+	Received: 1
+	Received: 1
+	Received: 1
+	Received: 1
+	Received: 1
+
+Po włączeniem obsługi QoS:
+
+Consumer 1:
+	Z1 CONSUMER
+	Waiting for messages...
+	Received: 1
+	Received: 1
+	Received: 5
+	Received: 1
+	Received: 5
+
+Consumer 2:
+	Z1 CONSUMER
+	Waiting for messages...
+	Received: 5
+	Received: 1
+	Received: 5
+	Received: 1
+	Received: 5
