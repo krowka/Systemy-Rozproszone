@@ -1,0 +1,43 @@
+syntax = "proto3";
+option java_package = "grpc.exchange";
+
+enum CurrencyCode {
+  EUR = 0;
+  USD = 1;
+  PLN = 2;
+  CZK = 3;
+  AUD = 4;
+  CHF = 5;
+  DKK = 6;
+  GBP = 7;
+  HRK = 8;
+  HUF = 9;
+  NOK = 10;
+  RUB = 11;
+  SEK = 12;
+}
+
+enum RelationOp {
+  GT = 0;
+  LT = 1;
+}
+
+message CurrencyRate {
+  CurrencyCode currencyCode = 1;
+  float value = 2;
+}
+
+message CurrencyNotification {
+  repeated CurrencyRate currencyRate = 1;
+  string message = 2;
+}
+
+message Condition {
+  RelationOp relationOp = 1;
+  CurrencyRate currencyRate = 2;
+}
+
+service ExchangeRate {
+  rpc Subscribe(Condition) returns (stream CurrencyNotification);
+}
+// D:\Files\proto\bin\protoc.exe -I=. --java_out=src --plugin=protoc-gen-grpc-java=protoc-gen-grpc-java-1.29.0.exe --grpc-java_out=src exchange_rate.proto
